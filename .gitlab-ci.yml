@@ -18,6 +18,7 @@ include:
   - 'https://ci-files.skypicker.com/templates/build/coala.yml'
   - 'https://ci-files.skypicker.com/templates/test/container_scanning.yml'
   - 'https://ci-files.skypicker.com/templates/test/dependency_scanning.yml'
+  - 'https://ci-files.skypicker.com/staging/aexvir-license-management/test/license_management.yml'
   - 'https://ci-files.skypicker.com/templates/test/pylint.yml'
   - 'https://ci-files.skypicker.com/templates/test/pytest.yml'
   - 'https://ci-files.skypicker.com/templates/test/sast.yml'
