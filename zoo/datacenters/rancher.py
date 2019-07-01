@@ -8,7 +8,7 @@ from .models import InfraNode, NodeKind
 
 
 def get(path, params=None):
-    url = urljoin(settings.RANCHER_API_URL, path)
+    url = urljoin(f"{settings.RANCHER_API_URL}/", path)
     auth = (settings.RANCHER_ACCESS_KEY, settings.RANCHER_SECRET_KEY)
 
     resp = session.get(url, auth=auth, params=params)
@@ -76,7 +76,7 @@ def _map_lb_to_services(lb, hosts, project_node):
 
     service_nodes = []
     for rule in lb.get("lbConfig", {}).get("portRules", []):
-        if not rule["protocol"].startswith("http"):
+        if not rule.get("hostname") or rule["protocol"].startswith("http"):
             continue
 
         uri = (

@@ -7,8 +7,8 @@ RUN addgroup -S macaque && adduser -H -D -S macaque macaque
 WORKDIR /app
 COPY *requirements.txt ./
 RUN apk add --no-cache --virtual=.build-deps curl build-base postgresql-dev && \
-    apk add --no-cache --virtual=.run-deps libpq && \
-    apk add --no-cache --virtual=.webpack-deps nodejs nodejs-npm && \
+    apk add --no-cache --virtual=.run-deps libpq nodejs nodejs-npm && \
+    apk add --no-cache --virtual=.webpack-deps libpq && \
     # npm needs unsafe-perm because of https://github.com/nodejs/docker-node/issues/813
     npm config set unsafe-perm true && \
     npm install --global yarn && \
