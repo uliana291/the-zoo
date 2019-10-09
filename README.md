@@ -29,6 +29,16 @@ The Zoo also provides analytics about how dependency usage and its versions evol
 
 ## Development
 
+### Initial setup
+
+- Create a database: `$ make migrate`
+- Create a superuser: `$ make superuser`
+- Create `.env` file based on `.env.example`
+  - Use gitlab/github tokens with read permissions
+  - Specify gitlab url if applicable
+
+### How to run
+
 - Run in debug mode: `$ make run`
 - Stop: `$ make stop`
 - Stop and/or delete data: `$ make destroy`
@@ -40,11 +50,6 @@ Access web locally:
 - Web is running on port `20966`
 - Login at <http://localhost:20966/admin> with your superuser account
 - Access zoo at <http://localhost:20966/>
-
-### Initial setup
-
-- Create a database: `$ make migrate`
-- Create a superuser: `$ make superuser`
 
 ### Database changes
 
@@ -99,4 +104,4 @@ Setup virtual enviroment and install there `docs-requirements.txt`. Then you can
 use shortcuts:
 
 - Build docs: `$ make build-docs`
-- Open docs: `$ make read-docs`
+- Open docs: `$ make open-docs`
